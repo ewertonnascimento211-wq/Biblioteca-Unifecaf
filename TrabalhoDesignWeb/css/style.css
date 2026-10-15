@@ -1,0 +1,379 @@
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --azul-fecaf: #005a9c;       
+    --verde-fecaf: #00a859;      
+    --azul-escuro: #003660;     
+    --cinza-fundo: #f4f6f8;      
+    --cinza-card: #e1e4e8;       
+    --texto-escuro: #2c3e50;
+    --branco: #ffffff;
+}
+
+body {
+    background-color: var(--branco);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+}
+
+/* 1. Barra de Navegação */
+.main-header {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 4px solid var(--azul-fecaf);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-img {
+    height: 45px; 
+    display: block;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: var(--azul-fecaf);
+    font-weight: bold;
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu ul li a.active, .nav-menu ul li a:hover {
+    background-color: var(--azul-fecaf);
+    color: var(--branco);
+}
+
+/* 2. Banner Principal */
+.main-banner {
+    background: url('../assets/imagens/biblioteca3-bg.png') no-repeat center center/cover;
+    height: 380px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco);
+    padding: 0 20px;
+}
+
+/* 3. Seção Sobre a Biblioteca */
+.about-section {
+    padding: 50px 8%;
+    background-color: #fcfcfc;
+}
+
+.about-section h2, .books-section h2, .units-section h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: var(--azul-fecaf);
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.about-grid-top {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 15px;
+    text-align: justify;
+}
+
+.about-image-center .image-placeholder {
+    width: 250px;
+    height: 180px;
+    background-color: var(--cinza-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Organização uniforme das miniaturas/ícones */
+.about-thumbnails {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.media-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.media-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: var(--cinza-card);
+}
+
+/* 4. Banner Intermediário */
+.mid-banner {
+    background: linear-gradient(rgba(0, 54, 96, 0.85), rgba(0, 54, 96, 0.85)), url('../assets/imagens/biblioteca.transiçao.jpg') no-repeat center center/cover;
+    height: 180px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--branco);
+    text-align: center;
+    padding: 20px;
+}
+
+.banner-overlay-content h2 {
+    font-size: 22px;
+    font-style: italic;
+    margin-bottom: 8px;
+    color: var(--verde-fecaf); /* Destaca a frase com o verde da logo */
+}
+
+.banner-overlay-content p {
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+
+/* 5. Seção Nossos Livros  */
+.books-section {
+    padding: 50px 8%;
+    background-color: var(--cinza-fundo);
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.book-card {
+    background-color: var(--branco);
+    border: 1px solid #d1d5db;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-radius: 6px;
+}
+
+.book-card h3 {
+    font-size: 18px;
+    color: var(--texto-escuro);
+}
+
+/* Ponto adicionado. Mantém a área de exibição idêntica para todos */
+.book-image-container {
+    width: 100%;
+    height: 220px;          
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;       
+}
+
+.book-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;    /* Preserva as proporções reais da capa do livro */
+    object-position: center;
+}
+
+.book-card p {
+    font-size: 14px;
+    color: #555;
+    flex-grow: 1;           /* Garante alinhamento retilíneo dos botões na base */
+}
+
+.btn-more {
+    display: inline-block;
+    background-color: var(--azul-fecaf);
+    color: var(--branco);
+    text-decoration: none;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: auto;
+    transition: background 0.3s;
+}
+
+.btn-more:hover {
+    background-color: var(--verde-fecaf);
+}
+
+/* 6. Seção As Unidades */
+.units-section {
+    padding: 50px 8%;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+}
+
+.units-section h2 {
+    color: var(--branco);
+    border-bottom: 2px solid var(--verde-fecaf);
+    padding-bottom: 10px;
+}
+
+.unit-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.unit-image-side .image-placeholder {
+    width: 280px;
+    height: 160px;
+    background-color: var(--cinza-card);
+    color: var(--texto-escuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Prevenção técnica para quando inserir tags <img> nas unidades */
+.unit-image-side img {
+    width: 280px;
+    height: 160px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+}
+
+.unit-text-side {
+    flex: 1;
+}
+
+.unit-text-side h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--verde-fecaf);
+}
+
+/* 7. Seção Contatos e Rodapé */
+.contact-section {
+    padding: 40px 8%;
+    background-color: var(--cinza-card);
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--azul-fecaf);
+}
+
+.contact-map-placeholder {
+    width: 320px;
+}
+
+.contact-map-placeholder .image-placeholder {
+    height: 180px;
+    width: 100%;
+    background-color: #bdc3c7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--texto-escuro);
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.footer-bottom {
+    background-color: #1a252f;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+}
+
+/* ==========================================
+   RESPONSIVIDADE (Ajuste para Smartphones)
+   ========================================== */
+@media (max-width: 900px) {
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 650px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .about-grid-top {
+        flex-direction: column;
+    }
+
+    .about-image-center .image-placeholder {
+        width: 100%;
+    }
+
+    .about-thumbnails {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        gap: 15px;
+    }
+
+    .books-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .unit-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .unit-image-side .image-placeholder {
+        width: 100%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-map-placeholder {
+        width: 100%;
+    }
+}
